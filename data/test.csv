@@ -1,0 +1,314 @@
+azure-takeover-detection,"Microsoft Azure is vulnerable to subdomain takeover attacks. Subdomain takeovers are a common, high-severity threat for organizations that regularly create and delete many resources. A subdomain takeover can occur when a DNS record points to a deprovisioned Azure resource.","word
+word",dsl,,,cname,"azure-api.net
+           azure-mobile.net
+           azurecontainer.io
+           azurecr.io
+           azuredatalakestore.net
+           azureedge.net
+           vinay
+           azurefd.net
+           (?i)(?:discord)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|]){0,3}(?:=|>|:=|\|\|:|<=|=>|:)(?:'|\|\s|=|\x60){0,5}([a-z0-9=_\-]{32})(?:['|\|\n|\r|\s|\x60|;]|$)
+            azurehdinsight.net
+           azurewebsites.net
+           azurewebsites.windows.net
+           blob.core.windows.net
+           cloudapp.azure.com
+           cloudapp.net
+           database.windows.net
+           redis.cache.windows.net
+           search.windows.net
+           servicebus.windows.net
+           trafficmanager.net
+           visualstudio.com
+NXDOMAIN",,high,"https://godiego.co/posts/STO/
+https://docs.microsoft.com/en-us/azure/security/fundamentals/subdomain-takeover
+https://cystack.net/research/subdomain-takeover-chapter-two-azure-services/",CWE-404,,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N,7.2,,,"dns,takeover,azure"
+caa-fingerprint,A CAA record was discovered. A CAA record is used to specify which certificate authorities (CAs) are allowed to issue certificates for a domain.,regex,regex,,,"issue (.*)'
+'issuewild (.*)'
+'iodef (.*)'",IN\tCAA\\t(.+)$,,info,https://support.dnsimple.com/articles/caa-record/#whats-a-caa-record,CWE-200,,,,,,"dns,caa"
+detect-dangling-cname,A CNAME detect dangling condition was discovered. Most commonly this relates to failing to remove records from the zone once they are no longer needed.,"word
+regex",dsl,,,cname,"NXDOMAIN
+IN\tCNAME\\t(.+)$",,info," https://securitytrails.com/blog/subdomain-takeover-tips
+ https://nominetcyber.com/dangling-dns-is-no-laughing-matter/
+ https://nabeelxy.medium.com/dangling-dns-records-are-a-real-vulnerability-361f2a29d37f
+ https://docs.microsoft.com/en-us/azure/security/fundamentals/subdomain-takeover",CWE-200,,,,,,"dns,takeover"
+dmarc-detect,"|
+    DNS DMARC information was detected.",regex,regex,,answer,,"IN\tTXT\\t(.+)$
+IN\tTXT\t(.+)",,info,"https://dmarc.org/
+https://dmarc.org/wiki/FAQ#Why_is_DMARC_important.3F",CWE-200,,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N,0.0,,,"dns,dmarc"
+dns-saas-service-detection,A CNAME DNS record was discovered,"word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+word
+regex",dsl,,"answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer
+answer",cname,"outlook.com
+office.com
+azure-api.net
+azure.com
+azure-mobile.net
+azurecontainer.io
+azurecr.io
+^(vinay)
+kkkk
+azuredatalakestore.net
+azureedge.net
+azurefd.net
+azurehdinsight.net
+azurewebsites.net
+azurewebsites.windows.net
+blob.core.windows.net
+cloudapp.azure.com
+cloudapp.net
+database.windows.net
+redis.cache.windows.net
+search.windows.net
+servicebus.windows.net
+visualstudio.com
+-msedge.net
+trafficmanager.net
+zendesk.com
+cname.announcekit.app
+wixdns.net
+akadns.net
+akagtm.org
+akahost.net
+akam.net
+akamai.com
+akamai.net
+akamaiedge-staging.net
+akamaiedge.net
+akamaientrypoint.net
+akamaihd.net
+akamaistream.net
+akamaitech.net
+akamaitechnologies.com
+akamaitechnologies.fr
+akamaized.net
+akaquill.net
+akasecure.net
+akasripcn.net
+edgekey.net
+edgesuite.net
+cloudflare.net
+cloudflare-dm-cmpimg.com
+cloudflare-ipfs.com
+cloudflare-quic.com
+cloudflare-terms-of-service-abuse.com
+cloudflare.com
+cloudflare.net
+cloudflare.tv
+cloudflareaccess.com
+cloudflareclient.com
+cloudflareinsights.com
+cloudflareok.com
+cloudflareportal.com
+cloudflareresolve.com
+cloudflaressl.com
+cloudflarestatus.com
+sn-cloudflare.com
+cloudfront.net
+salesforce.com
+siteforce.com
+force.com
+amazonaws.com
+elasticbeanstalk.com
+awsglobalaccelerator.com
+fastly.net
+netlify.app
+netlify.com
+netlifyglobalcdn.com
+vercel.app
+sendgrid.net
+sendgrid.com
+qualtrics.com
+herokuapp.com
+herokucdn.com
+herokudns.com
+herokussl.com
+herokuspace.com
+gitlab.com
+gitlab.io
+akana.com
+apiportal.akana.com
+skilljarapp.com
+datagrail.io
+platform.sh
+folloze.com
+receptive.io
+pendo.io
+bydiscourse.com
+discourse-cdn.com
+discourse.cloud
+discourse.org
+hosted-by-discourse.com
+marketo.com
+marketo.co.uk
+mktoweb.com
+mktossl.com
+mktoweb.com
+marketo.com
+postclickmarketing.com
+rockcontent.com
+rockstage.io
+rocketlane.com
+proxy-ssl.webflow.com
+stacker.app
+hs-analytics.net
+hs-banner.com
+hs-scripts.com
+hsappstatic.net
+hscollectedforms.net
+hscoscdn00.net
+hscoscdn10.net
+hscoscdn20.net
+hscoscdn30.net
+hscoscdn40.net
+hsforms.com
+hsforms.net
+hubapi.com
+hubspot.com
+hubspot.es
+hubspot.net
+hubspotemail.net
+hubspotlinks.com
+hubspotusercontent-na1.net
+sidekickopen90.com
+usemessages.com
+gitbook.com
+gitbook.io
+fcm.googleapis.com
+firebase.com
+firebase.google.com
+firebase.googleapis.com
+firebaseapp.com
+firebaseappcheck.googleapis.com
+firebasedynamiclinks-ipv4.googleapis.com
+firebasedynamiclinks-ipv6.googleapis.com
+firebasedynamiclinks.googleapis.com
+firebaseinappmessaging.googleapis.com
+firebaseinstallations.googleapis.com
+firebaseio.com
+firebaselogging-pa.googleapis.comfirebaselogging.googleapis.com
+firebaseperusertopics-pa.googleapis.com
+firebaseremoteconfig.googleapis.com
+zdassets.com
+zdorigin.com
+zendesk.com
+zopim.com
+incapdns.net
+incapsula.com
+infoprtct.com
+metanetworks.com
+ppe-hosted.com
+pphosted.com
+proofpoint.com
+q4inc.com
+q4ir.com
+q4web.com
+appspot.com
+cloudfunctions.net
+ghs.googlehosted.com
+ghs4.googlehosted.com
+ghs46.googlehosted.com
+ghs6.googlehosted.com
+googlehosted.com
+googlehosted.l.googleusercontent.com
+run.app
+wpengine.com
+github.com
+github.io
+githubusercontent.com
+ghost.io
+ondigitalocean.app
+ontypedream.com
+hs.eloqua.com
+IN\tCNAME\\t(.+)$
+IN\\s*CNAME\\t(.+)$
+",,info,"https://ns1.com/resources/cname
+https://www.theregister.com/2021/02/24/dns_cname_tracking/
+https://www.ionos.com/digitalguide/hosting/technical-matters/cname-record/",,,,,,,"dns,service"
